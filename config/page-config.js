@@ -1,8 +1,8 @@
 const pages = [
   {
     path: 'perception',
-    name: 'yundun-perception',
-    title: '云盾态势感知图'
+    name: 'ds-perception',
+    title: '智慧小区'
   }
 ]
 
