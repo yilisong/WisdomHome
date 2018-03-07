@@ -11,7 +11,7 @@ const resolve = fileName =>
   path.join(`${setupEnv.outputPath}/perception`, `${fileName}.html`)
 
 perceptionRouter.get('/', (req, res) => {
-  sendFile(res, setupEnv.fs, resolve('yundun-perception'))
+  sendFile(res, setupEnv.fs, resolve('ds-perception'))
 })
 
 perceptionRouter.get('/cc', (req, res) => {
