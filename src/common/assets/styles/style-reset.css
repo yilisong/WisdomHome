@@ -1,0 +1,85 @@
+@import './responsive.css';
+$fontStack: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", sans-serif;
+
+html {
+  font-family: 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', Arial, sans-serif;
+  @extend responsive-font-size-default;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $fontStack !important;
+  font-weight: 100;
+  li, ol, ul {
+    list-style: none;
+  }
+  body, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, html, img, legend, ol, p, ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul, ol {
+    list-style: none;
+  }
+  legend {
+    color: #000;
+  }
+  fieldset, img {
+    border: none;
+  }
+  address, caption, cite, code, dfn, th, var {
+    font-style: normal;
+    font-weight: normal;
+  }
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+  a:focus {
+    outline: none;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
+  }
+  abbr[title], acronym[title] {
+    /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+  }
+  q:before, q:after {
+    content: '';
+  }
+  hr {
+    border: none;
+    height: 1px;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  /* 注：optgroup 无法扶正 */
+  button, input, select, textarea {
+    font-size: 100%;
+    /* 使得表单元素在 ie 下能继承字体大小 */
+  }
+  small {
+    font-size: 12px;
+  }
+  code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  /* to avoid element dialog cover over nprogress */
+  #nprogress {
+    position: relative;
+    z-index: 9999999;
+  }
+}

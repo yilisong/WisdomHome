@@ -1,0 +1,4 @@
+@define-extend responsive-font-size-default {
+  font-size: responsive 12px 14px;
+  font-range: 420px 1300px;
+}

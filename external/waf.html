@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--
+    @team Yundun FET
+    @author yilisong@yundun.com
+    @latest 2017-8-16
+    @operator yilisong@yundun.com
+-->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no" />
+    <title>云盾(YUNDUN)-WAF-全网攻防态势</title>
+    <meta name="keywords" content="DDoS防火墙,DDoS防御,防CC攻击,防DDoS攻击,免费CDN,网站加速,CDN加速,免费DNS,智能DNS,高防DNS,网站防火墙,防SQL注入,网页防篡改,云WAF,网站安全,网站防护,YUNDUN" />
+    <meta name="description" content="YUNDUN—网站安全加速云平台。云WAF、DDoS云清洗、T级防C抗D、高防智能DNS、防黑客入侵篡改、防挂马、防漏洞、CDN网站加速-【永久免费】-上海云盾旗下产品" />
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+
+    <link rel="stylesheet" href="external_static/styles/library.min.css">
+    <link rel="stylesheet" href="external_static/styles/country.css">
+    <link rel="stylesheet" href="external_static/styles/animations.css">
+    <link rel="stylesheet" href="external_static/styles/common.css">
+    <link rel="stylesheet" href="external_static/styles/waf.css">
+
+<body class="global-bg">
+    <div class="yundun-logo">
+        <div id="mapSwitchBtn" class="map-switch-btn btn-world" title="切换地图"></div>
+        <div class="top-right-img">
+            <div class="topRightBackgroundImage">
+                <div class="scaleplate_div">
+                    <div>今日被攻击IP</div>
+                    <div class="marTop5">
+                        <div class="figure" id="totalAttackIpGauge"></div>
+                        <div class="unit" id="totalAttackIpGaugeUnit"></div>
+                        <div class="blood">
+                            <img src="external_static/images/scaleplate.png" id="totalAttackIp">
+                        </div>
+                    </div>
+                </div>
+                <div class="scaleplate_div">
+                    <div>今日攻击次数</div>
+                    <div class="marTop5">
+                        <div class="figure" id="totalAttackCountGauge"></div>
+                        <div class="unit" id="totalAttackCountGaugeUnit"></div>
+                        <div class="blood">
+                            <img src="external_static/images/scaleplate.png" id="totalAttack">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="top-center-scene scene-open">
+        <div class="scene-content fujian">
+            <h3 id="subTitle" class="sub-title"></h3>
+            <div id="searchBar" class="tools-bar hide">
+                <div class="search-group">
+                    <input id="iptSearch" type="text" class="group-input" placeholder="输入域名进行查询（区分大小写）">
+                    <button id="btnSearch" class="group-btn float-right" type="button">查询</button>
+                </div>
+                <div id="msgSearch" class="msg-error"></div>
+            </div>
+        </div>
+    </div> -->
+    <div class="main-scene">
+        <div id="map" class="map-content">
+            <div class="map-scope" id="worldMap"></div>
+            <div class="map-scope" id="chinaMap"></div>
+        </div>
+    </div>
+    <div class="left1 scene2 top-right-scene2 scene-close2 left_banner">
+        <div class="triangle_left"></div>
+        <div class="triangle_right">
+            <div class="left_title_switch">
+                <div class="left_title">24h 攻击次数趋势</div>
+                <div class="lightning_icon_close"></div>
+            </div>
+            <div class="content trendLine-box left_switch_div">
+                <div id="todayAttackCountTrendLine" class="trendLine"></div>
+            </div>
+        </div>
+    </div>
+    <div class="left2 scene2 top-right-scene2 scene-close2 left_banner">
+        <div class="triangle_left_open"></div>
+        <div class="triangle_right">
+            <div class="left_title_switch">
+                <div class="left_title">实时攻击次数趋势</div>
+                <div class="lightning_icon_close"></div>
+            </div>
+            <div class="content trendLine-box left_switch_div">
+                <div id="realTimeAttackCountTrendLine" class="trendLine"></div>
+            </div>
+        </div>
+    </div>
+    <div class="left3 scene2 top-right-scene2 scene-close2 left_banner">
+        <div class="triangle_left"></div>
+        <div class="triangle_right">
+            <div class="left_title_switch">
+                <span></span>
+                <div class="left_title">攻击UserAgent</div>
+                <div class="attack_lightning_icon_close"></div>
+            </div>
+            <div class="content trendLine-box left_switch_div">
+                <div id="typeAttackRanking">
+                    <ul>
+                        <ol class="loading-height-100-without-title text-center">数据正在读取中...</ol>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scene bottom-left-scene scene-close">
+        <div class="scene-content bottom-scene-content">
+            <div class="data-box border-top-radius border-bottom-radius float-left attack_source_div">
+                <div class="data-box border-top-radius">
+                    <div class="title attack_source">
+                        <span class="padding-right-10"></span>
+                    </div>
+                    <div class="content">
+                        <!-- 攻击国家 Top5 -->
+                        <div id="globalCountriesAttackRanking" class="half-box float-left">
+                            <ul>
+                                <ol class="loading-height-100-without-title text-center">数据正在读取中...</ol>
+                            </ul>
+                        </div>
+                        <!-- 攻击省份 Top5 -->
+                        <div id="chinaProvincesAttackRanking" class="half-box float-left show-left-border">
+                            <ul>
+                                <ol class="loading-height-100-without-title text-center">数据正在读取中...</ol>
+                            </ul>
+                        </div>
+                        <div class="content attack_source_ip">
+                            <ul id="iPAttackCountRanking">
+                                <ol class="loading-height-400-with-title text-center">数据正在读取中...</ol>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="triangle top-right-triangle">
+            <a class="fa fa-angle-double-left top-right-angle breath-light"></a>
+        </div>
+    </div>
+    <div class="scene bottom-center-scene scene-close">
+        <div class="scene-content bottom-scene-content">
+            <div class="data-box border-top-radius border-bottom-radius">
+                <div id="domainAttackRankingBox" class="data-box" style="width: 100%">
+                    <div class="title attack_domain"></div>
+                    <div class="content">
+                        <!-- 被攻击域名 Top10 -->
+                        <div id="domainAttackRanking">
+                            <ul>
+                                <ol class="loading-height-200-without-title text-center">数据正在读取中...</ol>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="triangle top-center-triangle">
+            <a class="fa fa-angle-double-left top-center-angle breath-light"></a>
+        </div>
+    </div>
+    <div class="scene bottom-right-scene scene-close">
+        <div class="scene-content bottom-scene-content">
+            <div class="data-box border-top-radius border-bottom-radius calc-width-without-border">
+                <div class="content">
+                    <div class="bottom-right-title">
+                        <div>
+                            <img src="external_static/images/attack_details_waf.png">
+                        </div>
+                        <div>攻击IP(归属地)</div>
+                        <div>攻击类型</div>
+                        <div>被攻击URL</div>
+                        <div>攻击UserAgent</div>
+                    </div>
+                    <ul class="bottom-right-body" id="realTimeAttackDefenseDetails">
+                        <div class="loading-height-100-with-title text-center">数据正在读取中...</div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="triangle top-left-triangle">
+            <a class="fa fa-angle-double-left top-left-angle breath-light"></a>
+        </div>
+    </div>
+    <script>
+        var currentPrefix = 'waf';
+        var currentPageType = 'all_public';
+    </script>
+    <script src="external_static/scripts/jquery-1.11.1.min.js"></script>
+    <script src="external_static/scripts/library.min.js"></script>
+    <script src="external_static/scripts/common.js"></script>
+    <script src="external_static/scripts/waf.js"></script>
+    <!-- <script src="external_static/scripts/layout.min.js"></script> -->
+    <script src="external_static/scripts/layout.js"></script>
+
+    <!--下面是竖屏提示,性能原因丢最后-->
+    <div id="orientLayer" class="mod-orient-layer" style="display: block;">
+        <div class="mod-orient-layer__content">
+            <i class="icon mod-orient-layer__icon-orient"></i>
+            <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        /* 样式放在结尾，防止 base64 图片造成拥塞 */
+
+        @keyframes rotation {
+            10% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(0);
+            }
+            60% {
+                transform: rotate(0);
+            }
+            90% {
+                transform: rotate(90deg);
+            }
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        .mod-orient-layer {
+            display: none;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            z-index: 9997
+        }
+
+        .mod-orient-layer__content {
+            position: absolute;
+            width: 100%;
+            top: 45%;
+            margin-top: -75px;
+            text-align: center
+        }
+
+        .mod-orient-layer__icon-orient {
+            display: inline-block;
+            width: 100px;
+            height: 142px;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC');
+            transform: rotate(90deg);
+            animation: rotation infinite 1.5s ease-in-out;
+            background-size: 100% 100%;
+        }
+
+        .mod-orient-layer__desc {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #fff
+        }
+
+        .mod-orient-layer__desc {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #fff
+        }
+    </style>
+    <script>
+        /*******************判断横屏竖屏*******************/
+        var orientLayer = document.getElementById("orientLayer");
+        //判断横屏竖屏
+        function checkDirect() {
+            if (document.documentElement.clientHeight >= document.documentElement.clientWidth) {
+                return "portrait";
+            } else {
+                return "landscape";
+            }
+        }
+        //显示屏幕方向提示浮层
+        function orientNotice() {
+            var orient = checkDirect();
+            if (orient == "portrait") {
+                orientLayer.style.display = "block";
+            } else {
+                orientLayer.style.display = "none";
+            }
+        }
+
+        function initME() {
+            orientNotice();
+            window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+                setTimeout(orientNotice, 200);
+            })
+        }
+        initME();
+    </script>
+</body>
+
+</html>

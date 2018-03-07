@@ -1,0 +1,687 @@
+/**
+ * @team Yundun FET
+ * @author yilisong@yundun.com
+ * @latest 2017-9-13
+ * @operator yilisong@yundun.com
+ */
+
+
+/************************** layout init **************************/
+
+@media (min-width: 1201px) {
+    .global-bg {
+        background: url("../images/cc_bg.jpg") repeat 0 0;
+        background-size: 100% 100%;
+        background-color: #0b0a0f;
+    }
+}
+/***********************/
+.yundun-logo {
+    height: 68px;
+    background: url('../images/ddos_top_logo.png') no-repeat 0 0;
+}
+.top-right-img {
+    display: block;
+    width: 50%;
+    height: 4rem;
+    float: right;
+    min-width: 1000px;
+    background: url(../images/ddos_right_top.png) no-repeat 0px 0px;
+    background-size: 100% 100%;
+}
+.blood {
+    height: 35px;
+    margin-left: 4.2rem;
+    background: url('../images/blood100.png') no-repeat 0 0;
+}
+.blood1000 {
+    height: 35px;
+    margin-left: 5rem;
+    background: url('../images/blood1000.png') no-repeat 0 0;
+}
+.blood img {
+    margin-top: -1px;
+    margin-left: -3px;
+}
+.figure {
+    float: left;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #415fde;
+}
+.unit {
+    float: left;
+    margin-top: 0.9rem;
+    font-size: 0.5rem;
+    color: #fff;
+}
+.scaleplate_div {
+    float: right;
+    width: 33%;
+    margin-top: 15px;
+}
+.topRightBackgroundImage {
+    height: 3rem;
+    background: url('../images/rightddos.png') no-repeat 0 0;
+}
+.marTop5 {
+    margin-top: 5px;
+}
+.scene2 {
+    overflow: hidden;
+    z-index: 10;
+}
+.triangle_left_open {
+    height: 1.5rem;
+    min-width: 26px;
+    position: absolute;
+    background: url(../images/triangle_left.png) no-repeat -25px 0px;
+}
+
+.triangle_left {
+    height: 1.5rem;
+    min-width: 26px;
+    position: absolute;
+    background: url(../images/triangle_left.png) no-repeat -7px 0px;
+}
+.triangle_right {
+    width: 90%;
+    margin-left: 10%;
+    background: rgba(0, 63, 99, 0.2);
+}
+
+.top-right-scene2 {
+    position: absolute;
+    right: 0;
+}
+.scene-close2 {
+    cursor: pointer;
+    width: 10rem !important;
+    height: 1.5rem !important;
+    transition: all 1s;
+    line-height: 1.5rem !important;
+    padding-left: 5px;
+}
+.left_banner {
+    line-height: 1.5rem !important;
+}
+.left_title {
+    display: inline-block;
+    float: left;
+}
+.left_banner_show .left_title {
+    padding-left: 5px;
+}
+
+
+.lightning_icon_close, .attack_lightning_icon_close{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-right: 5px;
+}
+.left_banner_show .lightning_icon_close {
+    background: url('../images/lightning_icon_ddos.png') no-repeat 0 -30px;
+}
+.scene-close2 .lightning_icon_close {
+    background: url('../images/lightning_icon_ddos.png') no-repeat 0 0;
+}
+.left_banner_show .attack_lightning_icon_close {
+    background: url('../images/attack_lightning_icon_ddos.png') no-repeat 0 -30px;
+}
+.scene-close2 .attack_lightning_icon_close {
+    background: url('../images/attack_lightning_icon_ddos.png') no-repeat 0 0px;
+}
+.bottom-left-scene .bottom-scene-content {
+    background: url(../images/ddos_right_top.png) no-repeat 0px 0px;
+    background-size: 100% 100%;
+}
+.bottom-center-scene .border-bottom-radius {
+    background: url(../images/left_title_switch_ddos.png) no-repeat 0 10.9rem;
+}
+.trendLine-box {
+    background: url('../images/left_title_switch_ddos.png') no-repeat 0 7.2rem;
+}
+.left3 .left_switch_div {
+    background: url('../images/left_title_switch_ddos.png') no-repeat 0 13.9rem;
+}
+.left_banner_show {
+    width: 17.45rem;
+    height: 10.8rem;
+    margin-left: -2.2rem;
+    margin-top: -2.2rem;
+}
+.left_title_switch {
+    width: 100%;
+    height: 1.5rem !important;
+    cursor: pointer;
+    padding-left: 5px;
+    background: url('../images/left_title_switch_ddos.png') no-repeat 0 -0.55rem;
+    border-left: 2px solid #003f63;
+}
+.attack_source {
+    background: url('../images/attack_source_ddos.png') no-repeat 0 0;
+}
+.attack_domain {
+    background: url('../images/attack_domain_ddos.png') no-repeat 0 0;
+}
+.attack_source_ip {
+    width: 67%;
+    display: inline-block;
+}
+.left1 {
+    margin-top: 15px;
+}
+.left2 {
+    margin-top: 65px;
+}
+.left3 {
+    height: 18rem;
+    margin-top: 115px;
+}
+/****************/
+.main-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.scene {
+    overflow: hidden;
+    z-index: 10;
+}
+
+.scene-open {
+    transition: all 1s;
+}
+
+.scene-close {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    min-width: 1.5rem !important;
+    transition: all 1s;
+}
+
+.top-center-scene-close {
+    height: 1rem !important;
+    transition: all 1s;
+}
+
+.top-center-scene {
+    position: relative;
+    width: 57%;
+    min-width: 33.5rem;
+    height: 7.5rem;
+    margin: 0 auto;
+    z-index: 9;
+    transition: all 1s;
+}
+
+.group-menu {
+    position: absolute;
+    top: 1.5rem;
+    color: #fff;
+    width: 3.5rem;
+    height: 1rem;
+    line-height: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 0.15rem;
+    z-index: 22;
+}
+
+.group-menu:hover {
+    height: 10.45rem;
+    border: 1px solid #bc342c;
+    transition: all 1s;
+}
+.group-menu ul li {
+    border-top: 1px dashed #eee;
+}
+.group-menu ul li:hover {
+    color: gold;
+    background-color: rgba(188, 52, 44, .5);
+}
+
+.group-menu-left {
+    left: -4rem;
+}
+
+.group-menu-right {
+    right: -4rem;
+}
+
+.gauge {
+    margin-right: -0.9rem;
+}
+
+.top-left-scene, .top-right-scene {
+    position: absolute;
+    width: 15rem;
+    height: 27.5rem;
+    top: 0;
+}
+
+.bottom-left-scene, .bottom-center-scene, .bottom-right-scene {
+    position: absolute;
+    height: 14rem;
+    bottom: 0.7rem;
+}
+
+.bottom-center-scene {
+    margin-left: 31%;
+    width: 17%;
+    min-width: 360px;
+}
+
+.top-left-scene {
+    left: 0;
+    border-bottom-right-radius: 0.1rem;
+}
+
+.top-right-scene {
+    right: 0;
+    border-bottom-left-radius: 0.1rem;
+}
+
+.bottom-left-scene {
+    left: 0;
+    width: 30%;
+    min-width: 540px;
+    border-top-right-radius: 0.1rem;
+}
+
+.bottom-right-scene {
+    right: 0;
+    width: 50%;
+    min-width: 900px;
+    border-top-left-radius: 0.1rem;
+}
+
+.data-bottom-right-table thead {
+    display: table-caption;
+    margin-bottom: 5px;
+}
+.scene-content {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+    overflow: hidden;
+}
+
+.bottom-scene-content {
+    bottom: 0.25rem;
+}
+
+.sm-bottom-left-scene {
+    top: 15rem;
+    bottom: 1rem;
+}
+
+.sm-bottom-right-scene {
+    left: 25%;
+}
+
+/************/
+.bottom-right-title div {
+    float: left;
+    height: 19px;
+    border-bottom: 5px solid #003f63;
+    margin-bottom: 2px;
+    display: inline-block;
+}
+
+.bottom-right-body ol li {
+    float: left;
+}
+
+.bottom-right-title div:nth-of-type(1),
+.bottom-right-body ol li:nth-of-type(1) {
+    width: 20%;    
+}
+
+.bottom-right-title div:nth-of-type(2),
+.bottom-right-body ol li:nth-of-type(2) {
+    width: 25%;
+}
+
+.bottom-right-title div:nth-of-type(3),
+.bottom-right-body ol li:nth-of-type(3) {
+    width: 25%;
+}
+
+.bottom-right-title div:nth-of-type(4),
+.bottom-right-body ol li:nth-of-type(4) {
+    width: 15%;
+}
+
+.bottom-right-title div:nth-of-type(5),
+.bottom-right-body ol li:nth-of-type(5) {
+    width: 15%;
+    overflow: hidden;
+}
+
+/*************************内容布局css*************************/
+
+.data-box {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+}
+
+.calc-width-without-border {
+    width: calc(100% - 0.1rem);
+}
+
+.data-box .horizontal-half-box {
+    width: 32%;
+    border-right: 1px solid rgba(0, 63, 99, .8);
+}
+
+.data-box .show-left-border {
+    border-left: 1px solid #003f63;
+}
+
+.data-box .title {
+    height: 0.9rem;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 5px solid #003f63;
+}
+
+.vertical-half-box .content {
+    height: 11.1rem;
+}
+
+.data-box .data-table {
+    width: 100%;
+    text-align: center;
+}
+
+.vertical-half-box {
+    height: 12.6rem;
+}
+
+.data-box .data-table .title-height {
+    height: 1rem;
+}
+
+.data-bottom-right-table ol:nth-of-type(1) li {
+    background-color: rgba(0, 63, 99, .9);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(2) li {
+    background-color: rgba(0, 63, 99, .8);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(3) li {
+    background-color: rgba(0, 63, 99, .7);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(4) li {
+    background-color: rgba(0, 63, 99, .6);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(5) li {
+    background-color: rgba(0, 63, 99, .5);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(6) li {
+    background-color: rgba(0, 63, 99, .4);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(7) li {
+    background-color: rgba(0, 63, 99, .3);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(8) li {
+    background-color: rgba(0, 63, 99, .2);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(9) li {
+    background-color: rgba(0, 63, 99, .1);
+    transition: all .2s;
+}
+
+.data-bottom-right-table ol:nth-of-type(10) li {
+    background-color: rgba(0, 63, 99, 0);
+    transition: all .2s;
+}
+
+.data-box ul ol, #realTimeDdosAttackDetails ol {
+    height: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.data-box ol:hover, .data-box .data-table ol:hover {
+    cursor: pointer;
+    background-color: rgba(0, 63, 99, 1);
+}
+.attack_source_div, .attack_source_div .data-box {
+    width: 97%;
+}
+.data-box .data-top-right-table {
+    line-height: 1.25rem;
+}
+.map-switch-btn {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: -2rem;
+    margin-left: 16.8rem;
+    width: 2.5rem;
+    height: 1.95rem;
+    position: relative;
+    z-index: 99;
+}
+
+.btn-china {
+    background: url("../images/map_choose_ddos.png") no-repeat 0 -1px;
+}
+
+.btn-world {
+    background: url("../images/map_choose_ddos.png") no-repeat 0 -40px;
+}
+
+.top-center-scene .scene-content h1, .sub-title {
+    color: #fff;
+    margin-top: 0.25rem;
+    text-align: left;
+}
+
+.group-input:focus {
+    border-top: 1px solid #bc342c;
+    border-left: 1px solid #bc342c;
+    border-bottom: 1px solid #bc342c;
+}
+
+.group-btn:hover {
+    color: #bc342c;
+    border: 1px solid #bc342c;
+}
+
+
+/**************************按钮三角和指针******************************/
+
+.triangle {
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    width: 0;
+    height: 0;
+}
+
+.center-bottom-triangle {
+    position: absolute;
+    bottom: -0.1rem;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bottom-left-triangle {
+    border-bottom: 1.25rem solid rgba(0, 63, 99, .5);
+    border-right: 1.25rem solid transparent;
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right-triangle {
+    border-bottom: 1.25rem solid rgba(0, 63, 99, .5);
+    border-left: 1.25rem solid transparent;
+    bottom: 0;
+    right: 0;
+}
+
+.top-left-triangle {
+    border-top: 1.25rem solid rgba(0, 63, 99, .5);
+    border-right: 1.25rem solid transparent;
+    top: 0;
+    left: 0;
+}
+
+.top-right-triangle {
+    border-top: 1.25rem solid rgba(0, 63, 99, .5);
+    border-left: 1.25rem solid transparent;
+    top: 0;
+    right: 0;
+}
+
+.top-center-triangle {
+    border-top: 1.25rem solid rgba(0, 63, 99, .5);
+    border-left: 0.8rem solid transparent;
+    border-right: 0.8rem solid transparent;
+    top: 0;
+    right: 0;
+}
+
+.fa {
+    font-size: 1rem;
+    color: #ff0;
+}
+
+.center-angle {
+    transform: rotate(-90deg);
+    transition: all .5s;
+}
+
+.center-angle:hover {
+    transform: rotate(630deg);
+    transition: all .5s;
+}
+
+.top-right-angle {
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.1rem;
+    transform: rotate(135deg);
+    transition: all .5s;
+}
+
+.top-right-angle:hover {
+    transform: rotate(855deg);
+    transition: all .5s;
+}
+
+.top-left-angle {
+    position: absolute;
+    bottom: 0.35rem;
+    left: 0.15rem;
+    transform: rotate(45deg);
+    transition: all .5s;
+}
+
+.top-left-angle:hover {
+    transform: rotate(765deg);
+    transition: all .5s;
+}
+
+.top-center-angle {
+    position: absolute;
+    bottom: 0.3rem;
+    left: -0.2rem;
+    transform: rotate(90deg);
+    transition: all .5s;
+}
+
+.top-center-angle:hover {
+    transform: rotate(810deg);
+    transition: all .5s;
+}
+
+.bottom-right-angle {
+    position: absolute;
+    bottom: -1.3rem;
+    right: 0.1rem;
+    transform: rotate(-135deg);
+    transition: all .5s;
+}
+
+.bottom-right-angle:hover {
+    transform: rotate(585deg);
+    transition: all .5s;
+}
+
+.bottom-left-angle {
+    position: absolute;
+    bottom: -1.3rem;
+    left: 0.1rem;
+    transform: rotate(-45deg);
+    transition: all .5s;
+}
+
+.bottom-left-angle:hover {
+    transform: rotate(675deg);
+    transition: all .5s;
+}
+
+#defenseIpAttackBandwidthPeakRanking tbody tr td:nth-of-type(1) {
+    width: 7rem;
+    padding-left: 5px;
+}
+#defenseIpAttackBandwidthPeakRanking tbody tr td:nth-of-type(2) {
+    width: 6rem;
+}
+/*.width_add {
+    margin-left: 4.7rem;
+}*/
+.ddos_blood {
+    margin-left: 5.2rem;
+}
+
+.iPAttackCountRankingLi1 {
+    display: inline-block;
+    float: left;
+    padding-left: 5px;
+    width: 40%;
+    text-align: left;
+}
+
+.iPAttackCountRankingLi2 {
+    float: left;
+    width: 30%;
+    text-align: right;
+}
+
+.iPAttackCountRankingLi3 {
+    text-align: right;
+    float: right;
+    padding-right: 5px;
+}

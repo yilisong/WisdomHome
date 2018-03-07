@@ -1,0 +1,10 @@
+.el-dialog__title {
+  border-left: 3px solid var(--primary-blue);
+  padding-left: 20px;
+  font-weight: normal;
+}
+
+.el-dialog__header {
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--border-gray);
+}

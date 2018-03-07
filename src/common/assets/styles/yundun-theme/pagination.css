@@ -1,0 +1,47 @@
+.el-pagination {
+  padding-top: 15px;
+  text-align: right;
+}
+
+.el-pagination__total, .el-pagination__sizes {
+  float: left;
+}
+
+.el-pagination .btn-prev, .el-pagination .btn-next {
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.el-pager li {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  line-height: 26px;
+  margin: auto 5px;
+  transition: all .25s;
+}
+
+.el-pager li:last-child {
+  border: 1px solid transparent;
+}
+
+.el-pager li.active+li {
+  border: 1px solid transparent;
+}
+
+.el-pager li.active {
+  box-shadow: 0px 2px 5px -1px #7d8688;
+}
+
+.el-pager li:hover, .el-pagination .btn-prev:hover, .el-pagination .btn-next:hover, .el-pager li.active+li:hover, .el-pager li:last-child:hover {
+  border: 1px solid #20a0ff;
+  box-shadow: 0px 2px 5px -1px #7d8688;
+}
+
+.el-pagination button.disabled:hover {
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.el-pagination__jump {
+  margin-left: 50px;
+}
