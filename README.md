@@ -1,68 +1,21 @@
-# Usage
+# project
 
-### Development
+> A Vue.js project
 
-> Start a local development server with Dlls and HMR, all files are stored in memory.
+## Build Setup
 
-```sh
-$ yarn
-$ npm run dev
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-### Local Production
-
-> Start a local production server for quick preview testing.
-
-```sh
-$ yarn
-$ npm run build
-$ npm run local
-```
-
-### Publish
-
-```sh
-$ git checkout publish
-$ git fetch
-$ git merge origin/publish
-$ git merge your_feature_branch
-$ git push
-```
-
-### Online Production
-
-#### 1. Install global dependencies
-
-```sh
-$ npm install lerna pm2 -g --registry=https://registry.npm.taobao.org
-```
-
-#### 2. Install Yarn
-
-https://yarnpkg.com/zh-Hans/docs/install#linux-tab
-
-#### 3. Build
-
-```sh
-$ yarn && npm run build
-```
-
-#### 4. Start the production server
-
-Test environment:
-
-```sh
-$ npm run stage
-```
-
-Pre-release environment:
-
-```sh
-$ npm run pre
-```
-
-Release environment:
-
-```sh
-$ npm run release
-```
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
